@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script type="text/javascript">
+          {{ images }}
+    </script>
+  </head>
+  <body>
+    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRz8wM44dW1HUliyUP7pYsc4oqhr71n71egBSx9HcNJL3lpgMyThw" name="slide" width="100" height="56" />
+    <script>
+          //variable that will increment through the images
+          var step=1
+          function slideit(){
+          //if browser does not support the image object, exit.
+          if (!document.images)
+          return
+          document.images.slide.src=eval("image"+step+".src")
+          if (step<3)
+          step++
+          else
+          step=1
+          //call function "slideit()" every 2.5 seconds
+          setTimeout("slideit()",2500)
+          }
+          slideit()
+    </script>
+  </body>
+</html>
