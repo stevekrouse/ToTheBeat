@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+      margin: 0 auto;
+      max-width: 700px;
+      }
+      .container-narrow > hr {
+      margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+      margin: 60px 0;
+      text-align: center;
+      }
+      .jumbotron h1 {
+      font-size: 72px;
+      line-height: 1;
+      }
+      .jumbotron .btn {
+      font-size: 21px;
+      padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+      margin: 60px 0;
+      }
+      .marketing p + h4 {
+      margin-top: 28px;
+      }
+
+      .footer{
+      text-align: center;
+      }
+    </style>
+    <script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../static/js/create.js"></script>
+    <script type="text/javascript">
+      window.images = {{ images | safe}}
+      window.song  = {{ song | safe}}
+    </script>
+  </head>
+  <body>
+    <div class="container-narrow">
+      <div class="jumbotron">
+        <h3 id="number"> </h3>
+        <div id="container">
+          <img src="#" style="max-height:500px; max-width:600px;" id="slide"></img>
+          <p> <a class="btn btn-large" onclick="start()"> Start! </a> </p>
+        </div>
+  </body>
+</html>
