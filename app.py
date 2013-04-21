@@ -13,20 +13,20 @@ app = Flask(__name__)
 
 #client = MongoClient()
 
-# mongodb_uri = 'mongodb://dbh75.mongolab.com:27757/heroku_app15128018'
-# db_name = 'heroku_app15128018'
+mongodb_uri = 'mongodb://dbh75.mongolab.com:27757/heroku_app15128018'
+db_name = 'heroku_app15128018'
 
-#     # pymongo.Connection creates a connection directly from the URI, performing
-#     # authentication using the provided user components if necessary.
-#     #
-# try:
-#     client = pymongo.Connection(mongodb_uri)
-# except:
-#     print('Error: Unable to connect to database.')
-#     client = None
+    # pymongo.Connection creates a connection directly from the URI, performing
+    # authentication using the provided user components if necessary.
+    #
+try:
+    client = pymongo.Connection(mongodb_uri)
+except:
+    print('Error: Unable to connect to database.')
+    client = None
 
-# db = client[db_name]
-# collection = db.beat
+db = client[db_name]
+collection = db.beat
 collection = None
 
 @app.route('/')
