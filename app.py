@@ -3,7 +3,8 @@ from flask import render_template
 from json import dumps
 from pymongo import MongoClient, Connection
 from bson import ObjectId, json_util
-from flask import request, os
+from flask import request
+import os
 from flask import redirect, url_for
 import json
 
