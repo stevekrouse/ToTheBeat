@@ -1,7 +1,8 @@
 from flask import Flask
 from flask import render_template
 from json import dumps
-from pymongo import MongoClient, Connection, pymongo
+from pymongo import MongoClient, Connection
+import pymongo
 from bson import ObjectId, json_util
 from flask import request
 import os
@@ -12,7 +13,7 @@ app = Flask(__name__)
 
 #client = MongoClient()
 
-mongodb_uri = 'mongodb://heroku_app15128018:miller84@@dbh75.mongolab.com:27757/heroku_app15128018'
+mongodb_uri = 'mongodb://dbh75.mongolab.com:27757/heroku_app15128018'
 db_name = 'heroku_app15128018'
 
     # pymongo.Connection creates a connection directly from the URI, performing
@@ -20,12 +21,12 @@ db_name = 'heroku_app15128018'
     #
 try:
     client = pymongo.Connection(mongodb_uri)
-    db = client[db_name]
-    collection = db.beat
 except:
     print('Error: Unable to connect to database.')
     client = None
 
+db = client[db_name]
+collection = db.beat
 
 @app.route('/')
 def home():
