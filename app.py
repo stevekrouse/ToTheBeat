@@ -14,6 +14,7 @@ client = Connection(os.environ['MONGOHQ_URL'])
 #client = MongoClient()
 
 db = client.app15128018
+db.authenticate("heroku", "4a62d36a9a5d10f442196ab2bec0021f")
 collection = db.slideshow_collection
 
 
