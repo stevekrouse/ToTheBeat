@@ -66,4 +66,5 @@ def get_data(_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 33507))
+    app.run(debug=True, port=port)
