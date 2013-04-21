@@ -22,6 +22,11 @@
       margin: 30px 0;
       }
 
+       #container{
+      height:500px;
+      width:600px;
+      }
+
       /* Main marketing message and sign up button */
       .jumbotron {
       margin: 60px 0;
@@ -47,6 +52,13 @@
       .footer{
       text-align: center;
       }
+
+      #jam{
+      visibility:hidden;
+      }
+      #dance{
+      visibility:hidden;
+      }
     </style>
     <link href="../static/css/bootstrap-responsive.min.css" rel="stylesheet">
   </head>
@@ -57,8 +69,7 @@
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#"></a></li>
+          <li><a href="/"></a></li>
         </ul>
         <h3 class="muted">To The Beat</h3>
       </div>
@@ -79,19 +90,19 @@
             <h2>1) Uplaod Pics</h2>
             <p> Upload as many pictures as you'd like. Make sure you have enough
               to last a whole song. </p>
-            <p> <a class="btn btn-large" onclick="uploadPics()"> Upload Pictures</a></p>
+            <p> <a id="pics" class="btn btn-large" onclick="uploadPics()"> Upload Pictures</a></p>
           </div>
           <div class="span4">
             <h2>2) Play a Jam</h2>
             <p> Drop a dope beat worthy of those pictures. A montage is only as
               cool as it's song. Choose wisely.</p>
-            <p><a class="btn btn-large" onclick="uploadSong()"> Upload An Song</a> </p>
+            <p><a id="jam" class="btn btn-large" onclick="uploadSong()"> Upload An Song</a> </p>
           </div>
           <div class="span4">
             <h2>3) To The Beat</h2>
             <p> Tap along to the beat of your song to make your pictures get
               down and dirty.</p>
-            <p><a class="btn btn-large btn-success"  onclick="createVideo()"> Let's Dance! &raquo;</a></p>
+            <p><a id="dance" class="btn btn-large btn-success"  onclick="createVideo()"> Let's Dance! &raquo;</a></p>
           </div>
         </div>
 
@@ -115,13 +126,15 @@
           },
           function(fpfiles){
             $(fpfiles).each(function() {
-            window.images.push(this.url);
+            window.images.push(this.url);});
+            $('#pics').replaceWith($('<img>',{src: "http://www.iconsdb.com/icons/download/green/check-mark-3-64.png"}));
+            $('#jam').css('visibility', 'visible');
           },
           function(FPError){
            console.log(FPError.toString());
           }
         );
-      })};
+      };
 
       function uploadSong() {
       filepicker.setKey('ATNg7z7BsQQQf4gWMHHnQz');
@@ -130,6 +143,8 @@
       },
       function(FPFile){
       window.song = FPFile.url;
+      $('#jam').replaceWith($('<img>',{src: "http://www.iconsdb.com/icons/download/green/check-mark-3-64.png"}));
+      $('#dance').css('visibility', 'visible');
       },
       function(FPError){
       console.log(FPError.toString());

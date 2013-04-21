@@ -41,6 +41,13 @@
       .footer{
       text-align: center;
       }
+
+      .btn{
+      margin-top:10px;
+      }
+        #container{
+      height:400px;
+      }
     </style>
     <script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../static/js/watch.js"></script>
@@ -55,10 +62,20 @@
   </head>
   <body>
     <div class="container-narrow">
+       <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/"></a></li>
+        </ul>
+        <h3 class="muted">To The Beat</h3>
+      </div>
+
+      <hr>
       <div class="jumbotron">
         <div id="container">
           <img src="#" style="max-height:500px; max-width:600px;" id="slide"></img>
         </div>
+        <a class="btn btn-large btn-success" id="play"> Play </a>
       </div>
     </div>
   </body>

@@ -16,6 +16,11 @@
       margin: 30px 0;
       }
 
+      #container{
+      height:500px;
+      width:600px;
+      }
+
       /* Main marketing message and sign up button */
       .jumbotron {
       margin: 60px 0;
@@ -41,6 +46,13 @@
       .footer{
       text-align: center;
       }
+
+      .btn{
+      margin-top: 10;
+      }
+      #retry{
+      display:none;
+      }
     </style>
     <script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../static/js/create.js"></script>
@@ -51,11 +63,27 @@
   </head>
   <body>
     <div class="container-narrow">
+       <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/"></a></li>
+        </ul>
+        <h3 class="muted">To The Beat</h3>
+      </div>
+
+      <hr>
       <div class="jumbotron">
         <h3 id="number"> </h3>
         <div id="container">
           <img src="#" style="max-height:500px; max-width:600px;" id="slide"></img>
-          <p> <a class="btn btn-large" onclick="start()"> Start! </a> </p>
+          <p> <a id="start" class="btn btn-large btn-success" onclick="start()">
+          Start! </a> </p>
+          <p> <a id="retry" class="btn btn-large" onClick="history.go(0)">
+          Retry </a> </p>
+          <p>
+            Press start when ready. Then tap the beat until you run out
+            of pictures.
+          </p>
         </div>
   </body>
 </html>

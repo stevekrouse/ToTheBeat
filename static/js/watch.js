@@ -46,17 +46,19 @@ function ready_vid(){
     //sets the video display to the first photo
     $("#slide").attr("src",window.images[0]);
     //starts the video on click of the container
-    $('#container').click(function(){
-        audio.src = window.song;
-        audio.controls = false;
-        audio.autoplay = false;
-        window.context = new webkitAudioContext();
-        var source = context.createMediaElementSource(audio);
-        audio.play();
-        console.log(context.currentTime)
-        document.body.appendChild(audio);
-        window.num = 0
-        window.requestAnimationFrame(slide);
+    $('#play').click(function(){
+        if (window.context == null){
+            audio.src = window.song;
+            audio.controls = false;
+            audio.autoplay = false;
+            window.context = new webkitAudioContext();
+            var source = context.createMediaElementSource(audio);
+            audio.play();
+            console.log(context.currentTime)
+            document.body.appendChild(audio);
+            window.num = 0
+            window.requestAnimationFrame(slide);
+        }
     });
     window.times = new Array();
 

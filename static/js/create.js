@@ -1,4 +1,5 @@
 $(document).keypress(function(event) {
+    if (window.start_time != null) {
     if ( event.which == 32){
         slide(window.num);
         window.num++;
@@ -9,7 +10,7 @@ $(document).keypress(function(event) {
             done();
         }
     }
-});
+}});
 
 
 function done(){
@@ -42,9 +43,9 @@ $(document).ready(function(){
 
 function start() {
     audio.play()
-    console.log(context.currentTime);
     window.start_time = new Date().getTime();
-    console.log(context.currentTime);
+    $('#start').css('display', 'none');
+    $('#retry').css('display', 'inline-block');
 }
 
 function ready_vid(){
