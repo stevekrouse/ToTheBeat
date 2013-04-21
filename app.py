@@ -8,10 +8,9 @@ from flask import redirect, url_for
 import json
 
 app = Flask(__name__)
-if os.environ.get('MONGOHQ_URL'):
-    client = Connection(os.environ['MONGOHQ_URL'])
-else:
-    client = MongoClient()
+
+client = Connection(os.environ['MONGOHQ_URL'])
+#client = MongoClient()
 
 db = client.app15128018
 collection = db.slideshow_collection
