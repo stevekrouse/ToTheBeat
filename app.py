@@ -1,16 +1,19 @@
 from flask import Flask
 from flask import render_template
 from json import dumps
-from pymongo import MongoClient
+from pymongo import MongoClient, Connection
 from bson import ObjectId, json_util
-from flask import request
+from flask import request, os
 from flask import redirect, url_for
 import json
 
 app = Flask(__name__)
+if os.environ.get('MONGOHQ_URL'):
+    client = Connection(os.environ['MONGOHQ_URL'])
+else:
+    client = MongoClient()
 
-client = MongoClient()
-db = client.to_the_beat
+db = client.app15128018
 collection = db.slideshow_collection
 
 
