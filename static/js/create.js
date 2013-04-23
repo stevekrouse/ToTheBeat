@@ -1,16 +1,16 @@
 $(document).keypress(function(event) {
     if (window.start_time != null) {
-    if ( event.which == 32){
-        slide(window.num);
-        window.num++;
-        $('#number').text(window.images.length - window.num);
-        console.log(event.timeStamp - window.start_time);
-        window.intervals.push(event.timeStamp - window.start_time);
-        if (window.num >= window.images.length){
-            done();
+        if ( event.which == 32){
+            slide(window.num);
+            window.num++;
+            $('#number').text(window.images.length - window.num);
+            console.log(event.timeStamp - window.start_time);
+            window.intervals.push(event.timeStamp - window.start_time);
+            if (window.num >= window.images.length){
+                done();
+            }
         }
-    }
-}});
+    }});
 
 
 function done(){
@@ -44,8 +44,8 @@ $(document).ready(function(){
 function start() {
     audio.play()
     window.start_time = new Date().getTime();
-    $('#start').css('display', 'none');
-    $('#retry').css('display', 'inline-block');
+    $('#retry').addClass('btn-success')
+    $('#start').removeClass('btn-success')
 }
 
 function ready_vid(){

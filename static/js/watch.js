@@ -48,6 +48,8 @@ function ready_vid(){
     //starts the video on click of the container
     $('#play').click(function(){
         if (window.context == null){
+            $('#retry').addClass('btn-success')
+            $('#play').removeClass('btn-success')
             audio.src = window.song;
             audio.controls = false;
             audio.autoplay = false;

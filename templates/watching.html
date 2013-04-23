@@ -1,7 +1,7 @@
 <html>
   <head>
     <link href="../static/css/bootstrap.css" rel="stylesheet">
-     <style type="text/css">
+    <style type="text/css">
       body {
       padding-top: 20px;
       padding-bottom: 40px;
@@ -45,8 +45,8 @@
       .btn{
       margin-top:10px;
       }
-        #container{
-      height:400px;
+      #container{
+      height:425px;
       }
     </style>
     <script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
@@ -62,9 +62,9 @@
   </head>
   <body>
     <div class="container-narrow">
-       <div class="masthead">
+      <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="/">Home</a></li>
           <li><a href="/"></a></li>
         </ul>
         <h3 class="muted">To The Beat</h3>
@@ -73,10 +73,25 @@
       <hr>
       <div class="jumbotron">
         <div id="container">
-          <img src="#" style="max-height:500px; max-width:600px;" id="slide"></img>
+          <img src="#" style="max-height:425px; max-width:600px;" id="slide"></img>
         </div>
-        <a class="btn btn-large btn-success" id="play"> Play </a>
+        <p>
+          <a class="btn btn-large btn-success" id="play"> Play </a>
+          <a id="retry" class="btn btn-large" onClick="history.go(0)">
+            Replay </a>
+        </p>
       </div>
     </div>
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_floating_style addthis_32x32_style" style="right:50px;top:50px;">
+      <a class="addthis_button_preferred_1"></a>
+      <a class="addthis_button_preferred_2"></a>
+      <a class="addthis_button_preferred_3"></a>
+      <a class="addthis_button_preferred_4"></a>
+      <a class="addthis_button_compact"></a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50bdd8877a66ac65"></script>
+    <!-- AddThis Button END -->
   </body>
 </html>
