@@ -4,7 +4,6 @@ $(document).keypress(function(event) {
             slide(window.num);
             window.num++;
             $('#number').text(window.images.length - window.num);
-            console.log(event.timeStamp - window.start_time);
             window.intervals.push(event.timeStamp - window.start_time);
             if (window.num >= window.images.length){
                 done();
