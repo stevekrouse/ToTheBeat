@@ -3,69 +3,14 @@
   <head>
     <title>To The Beat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript">
-    </script>
     <!-- Le styles -->
     <link href="../static/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-      padding-top: 20px;
-      padding-bottom: 40px;
-      }
-
-      /* Custom container */
-      .container-narrow {
-      margin: 0 auto;
-      max-width: 700px;
-      }
-      .container-narrow > hr {
-      margin: 30px 0;
-      }
-
-       #container{
-      height:500px;
-      width:600px;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-      margin: 60px 0;
-      text-align: center;
-      }
-      .jumbotron h1 {
-      font-size: 72px;
-      line-height: 1;
-      }
-      .jumbotron .btn {
-      font-size: 21px;
-      padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-      margin: 60px 0;
-      }
-      .marketing p + h4 {
-      margin-top: 28px;
-      }
-
-      .footer{
-      text-align: center;
-      }
-
-      #jam{
-      visibility:hidden;
-      }
-      #dance{
-      visibility:hidden;
-      }
-    </style>
+    <link href="../static/css/index.css" rel="stylesheet">
     <link href="../static/css/bootstrap-responsive.min.css" rel="stylesheet">
   </head>
   <body>
-
+    
     <div class="container-narrow">
-
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
@@ -73,7 +18,7 @@
         </ul>
         <h3 class="muted">To The Beat</h3>
       </div>
-
+      
       <hr>
 
       <div class="jumbotron">
@@ -101,66 +46,15 @@
             <p><a id="dance" class="btn btn-large btn-success"  onclick="createVideo()"> Let's Dance! &raquo;</a></p>
           </div>
         </div>
-
       </div>
-
 
       <div class="footer">
         <p>Created by <a href="http://github.com/stevekrouse">Steve Krouse</a> 2013</p>
       </div>
 
-    </div> <!-- /container -->
+    </div>
 
-
-    <script>
-      window.images = new Array();
-
-      function uploadPics() {
-        filepicker.setKey('ATNg7z7BsQQQf4gWMHHnQz');
-        filepicker.pickMultiple({
-          mimetypes: ['image/*']
-          },
-          function(fpfiles){
-            $(fpfiles).each(function() {
-            window.images.push(this.url);});
-            $('#pics').replaceWith($('<img>',{src: "http://www.iconsdb.com/icons/download/green/check-mark-3-64.png"}));
-            $('#jam').css('visibility', 'visible');
-          },
-          function(FPError){
-           console.log(FPError.toString());
-          }
-        );
-      };
-
-      function uploadSong() {
-      filepicker.setKey('ATNg7z7BsQQQf4gWMHHnQz');
-      filepicker.pick({
-      mimetypes: ['audio/*']
-      },
-      function(FPFile){
-      window.song = FPFile.url;
-      $('#jam').replaceWith($('<img>',{src: "http://www.iconsdb.com/icons/download/green/check-mark-3-64.png"}));
-      $('#dance').css('visibility', 'visible');
-      },
-      function(FPError){
-      console.log(FPError.toString());
-      }
-      );
-      }
-
-      function createVideo() {
-      url = "/create?images=" + encode(window.images) + "&song=" + encode(song);
-      window.location.href = url;
-      }
-
-      function encode(value){
-      //stolen from stack overflow...
-      //create a in-memory div, set it's inner text(which jQuery automatically encodes)
-      //then grab the encoded contents back out.  The div never exists on the page.
-      return $('<div/>').text(value).html();
-      }
-
-    </script>
+    <script type="text/javascript" src="../static/js/index.html"></script>
     <script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
 

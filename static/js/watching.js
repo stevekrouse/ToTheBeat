@@ -1,21 +1,6 @@
 var audio = new Audio();
 
 function ready_vid(){
-    /*
-      parts = window.location.pathname.split('/')
-      if (parts[parts.length -1] == '')
-      _id = parts[parts.length - 2]
-      else _id = parts[parts.length - 1]
-
-      //pulls the json data about a particular video
-      if (_id != '' && _id != null){
-      $.getJSON('/get_data/' + _id, function(data, video){
-      window.images = (data['images']);
-      window.song = data['song'];
-      window.intervals = data['intervals'];
-    */
-    //makes image Objects out of images
-
     if ( !window.requestAnimationFrame ) {
 
 	window.requestAnimationFrame = ( function() {
@@ -25,7 +10,7 @@ function ready_vid(){
 		window.oRequestAnimationFrame ||
 		window.msRequestAnimationFrame ||
 		function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
-                    console.log('ahhh');
+                    console.log('error');
 		    window.setTimeout( callback, 1000 / 60 );
 
 		};
