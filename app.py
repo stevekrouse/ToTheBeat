@@ -1,23 +1,19 @@
-from flask import Flask
-from flask import render_template
-from json import dumps
-from pymongo import MongoClient, Connection
+from flask import Flask, render_template, request
 import pymongo
-from bson import ObjectId, json_util
-from flask import request
 import os
-from flask import redirect, url_for
-import json
+
+#for local database connections
+#from pymongo import MongoClient, Connection
 
 app = Flask(__name__)
 
+#for local database connections
 #client = MongoClient()
 
 mongodb_uri = 'mongodb://stevie:miller84@dbh29.mongolab.com:27297/tothebeat'
 
     # pymongo.Connection creates a connection directly from the URI, performing
     # authentication using the provided user components if necessary.
-    #
 try:
     client = pymongo.Connection(mongodb_uri)
 except:
@@ -57,12 +53,6 @@ def watch(_id):
                            images=[str(s) for s in data['images']],
                            song="'" + str(data['song']) + "'",
                            intervals=[float(i) for i in data['intervals']])
-
-
-@app.route('/get_data/<_id>')
-def get_data(_id):
-    data = collection.find_one({"_id": ObjectId(_id)})
-    return dumps(data, sort_keys=True, indent=4, default=json_util.default)
 
 
 if __name__ == "__main__":

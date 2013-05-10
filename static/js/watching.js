@@ -2,9 +2,7 @@ var audio = new Audio();
 
 function ready_vid(){
     if ( !window.requestAnimationFrame ) {
-
 	window.requestAnimationFrame = ( function() {
-
 	    return window.webkitRequestAnimationFrame ||
 		window.mozRequestAnimationFrame ||
 		window.oRequestAnimationFrame ||
@@ -12,15 +10,11 @@ function ready_vid(){
 		function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
                     console.log('error');
 		    window.setTimeout( callback, 1000 / 60 );
-
 		};
 
 	} )();
-
     }
-
     // Create an <audio> element dynamically.
-
     window.imagesObjects = new Array();
     for (i = 0; i < window.images.length; i++) {
         image=new Image()
@@ -48,7 +42,6 @@ function ready_vid(){
         }
     });
     window.times = new Array();
-
 }
 
 function slide(){
