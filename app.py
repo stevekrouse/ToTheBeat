@@ -10,7 +10,7 @@ app = Flask(__name__)
 #for local database connections
 #client = MongoClient()
 
-mongodb_uri = 'mongodb://stevie:miller84@dbh29.mongolab.com:27297/tothebeat'
+mongodb_uri = ''
 
     # pymongo.Connection creates a connection directly from the URI, performing
     # authentication using the provided user components if necessary.
